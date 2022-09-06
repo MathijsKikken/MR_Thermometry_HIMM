@@ -1,7 +1,7 @@
-function [m,wts,Ac,c,A,phi] = thermo_hybrid_waterfat(imgs, algp, scanp, lib, mswitch,phiswitch,minit,phiinit)
+function [m,wts,Ac,c,A,phi] = OptimizeHIMM(imgs, algp, scanp, lib, mswitch,phiswitch,minit,phiinit)
 %% Multi-echo MR Thermometry in the upper leg at 7T using near-harmonic 2D reconstruction for initialization
 %% HIMM: Harmonic Initialized Model-based Multi-echo
-%Mrmonic Initialized Model-based Multi-echo
+%
 % Function to solve for heating, field shifts, and select a baseline in the
 % presence of fat. 
 %

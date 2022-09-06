@@ -243,15 +243,15 @@ for ii = init_ix:step:init_ix+show_ix-1
     if initWithPreviousEstimate && ii == init_ix
         % Optimization of the first dynamic
         [mfunc(:,:,ii),wts(:,ii),Acfunc(:,:,ii),cfunc(:,ii),A,phi(:,:,ii)] = ...
-            thermo_hybrid_waterfat(dyn_img, algp, scanp, lib,1,0,zeros(scanp.dim));
+            OptimizeHIMM(dyn_img, algp, scanp, lib,1,0,zeros(scanp.dim));
     elseif initWithPreviousEstimate && ii > init_ix
         % Optimization of remainder dynamics (with nonzero initialization of mfunc and drift)
         [mfunc(:,:,ii),wts(:,ii),Acfunc(:,:,ii),cfunc(:,ii),A,phi(:,:,ii)] = ...
-            thermo_hybrid_waterfat(dyn_img, algp, scanp, lib,1,0,mfunc(:,:,ii-step));
+            OptimizeHIMM(dyn_img, algp, scanp, lib,1,0,mfunc(:,:,ii-step));
     else
         % Phi switch off, m switch on (solve for temperature without Tx/Rx gain)
         [mfunc(:,:,ii),wts(:,ii),Acfunc(:,:,ii),cfunc(:,ii),A,phi(:,:,ii)] = ...
-            thermo_hybrid_waterfat(dyn_img, algp, scanp, lib,1,0); 
+            OptimizeHIMM(dyn_img, algp, scanp, lib,1,0); 
     end
     lib.cinit = cfunc(:,ii);
     lib.Acinit = Acfunc(:,:,ii);
