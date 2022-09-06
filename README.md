@@ -13,6 +13,7 @@ The current algorithm mainly focuses on the measurements of RF heating. RF heati
 #### HIMM = harmonic initialized model-based multi-echo
 
 ***
+The following files are relevant for utilization of the algorithm:
 * __RunHIMM.m__: Example script to run algorithm on simulated data
 * __thermo_hybrid_waterfat__: Main function script
 ***
