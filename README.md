@@ -1,4 +1,4 @@
-#MR Thermometry HIMM
+# MR Thermometry algorithm code: harmonic initialized model-based multi-echo (HIMM)
 ***
 ## Multi-echo MR Thermometry in the upper leg at 7T using near-harmonic 2D reconstruction for initialization
 
