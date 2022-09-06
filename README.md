@@ -15,7 +15,7 @@ The current algorithm mainly focuses on the measurements of RF heating. RF heati
 ***
 The following files are relevant for utilization of the algorithm:
 * __RunHIMM.m__: Example script to run algorithm on simulated data
-* __thermo_hybrid_waterfat__: Main function script
+* __OptimizeHIMM.m__: Main function script
 ***
 [1] Poorman, M. E., Braškutė, I., Bartels, L. W., & Grissom, W. A. (2019). Multi‐echo MR thermometry using iterative separation of baseline water and fat images. Magnetic resonance in medicine, 81(4), 2385-2398.
 
