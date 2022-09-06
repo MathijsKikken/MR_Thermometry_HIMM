@@ -3,7 +3,7 @@
 ## Multi-echo MR Thermometry in the upper leg at 7T using near-harmonic 2D reconstruction for initialization
 
 #### M.W.I. Kikken, B.R. Steensma, C.A.T. van den Berg, and A.J.E. Raaijmakers
-#### Image Sciences Institute, University Medical Center Utrecht
+#### Computational Imaging Group for MRI Therapy & Diagnostics, University Medical Center Utrecht
 ***
 This code repository implements an algorithm for real-time-compatible water/fat separated MR thermometry in aqueous and mixed water/fat tissues. An article detailing the work has been submitted for publication to a peer reviewed journal. Use of this algorithm is allowed given proper citation of the original work and in accordance with the license file.
 The algorithm provided in this repository is based on the Multi-echo MR thermometry algorithm using iterative separation of baseline water and fat images with l1 regularization. This method was proposed by Poorman et al. (https://github.com/poormanme/waterFatSeparated_MRThermometry) and published in Magnetic Resonance in Medicine [1].
