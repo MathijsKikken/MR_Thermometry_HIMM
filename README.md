@@ -18,4 +18,5 @@ The following files are relevant for utilization of the algorithm:
 * __thermo_hybrid_waterfat__: Main function script
 ***
 [1] Poorman, M. E., Braškutė, I., Bartels, L. W., & Grissom, W. A. (2019). Multi‐echo MR thermometry using iterative separation of baseline water and fat images. Magnetic resonance in medicine, 81(4), 2385-2398.
+
 [2] Salomir, R., Viallon, M., Kickhefel, A., Roland, J., Morel, D. R., Petrusca, L., ... & Gross, P. (2011). Reference-free PRFS MR-thermometry using near-harmonic 2-D reconstruction of the background phase. IEEE transactions on medical imaging, 31(2), 287-301.
