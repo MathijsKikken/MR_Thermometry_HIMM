@@ -275,9 +275,9 @@ while costOld - cost > algp.stopthresh*costOld || ii < 6
         c = c_fit(indepvar,depvar,scanp.dim,A);
 
         if scanp.dim(1)==scanp.dim(2)
-            Ac_fit = reshape(A*c,[scanp.dim(1) scanp.dim(2)]);
+            Ac = reshape(A*c,[scanp.dim(1) scanp.dim(2)]);
         else
-            Ac_fit = reshape(A*c,[scanp.dim(2) scanp.dim(1)]).';
+            Ac = reshape(A*c,[scanp.dim(2) scanp.dim(1)]).';
         end
     end
 
