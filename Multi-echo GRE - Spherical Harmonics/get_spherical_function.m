@@ -17,26 +17,48 @@ function A = get_spherical_function(order,dims)
 % Output: 
 %   A:          polynomial array
 
-
 % Create 2D cartesian and spherical grids for the spherical functions
-th = linspace(0,pi,dims(2));    % inclination
-phi = linspace(0,2*pi,dims(1)); % azimuth
-[th,phi] = meshgrid(th,phi);
-
-szn = 1;
-x_cart = linspace(-szn,szn,dims(1));
-y_cart = linspace(-szn,szn,dims(2));
-[x_cart,y_cart] = meshgrid(x_cart,y_cart);
-r = sqrt(x_cart.^2+y_cart.^2);
+th_x = linspace(0,pi,dims(2));    % inclination
+phi_x = linspace(0,2*pi,dims(1)); % azimuth
+[th_x,phi_x] = meshgrid(th_x,phi_x);
+th_y = linspace(0,pi,dims(2));    % inclination
+phi_y = linspace(0,2*pi,dims(1)); % azimuth
+[phi_y,th_y] = meshgrid(phi_y,th_y);
 
 % Initialize the A matrix
-A = [];
-for n = 0:order
-    for m = -n:n
-        spherical_function_n_m = build_spherical_function_n_m(n,m,r,th,phi);
-        A = [ A spherical_function_n_m(:) ];
+A0 = get_spherical_harmonic(0,0,th_x,phi_y,'type','real');
+A = [A0(:)];
+for n = 1:order
+    for m = 0:n-1
+        spherical_function_n_m_x = get_spherical_harmonic(n,m,th_x,phi_x,'type','real');
+        A = [ A spherical_function_n_m_x(:) ];
+        if n ~= 0
+            spherical_function_n_m_y = get_spherical_harmonic(n,m,th_y,phi_y,'type','real');
+            A = [ A spherical_function_n_m_y(:) ];
+        end
+        %disp([num2str(n),' + ',num2str(m)])
     end
 end
+
+% % Create 2D cartesian and spherical grids for the spherical functions
+% th = linspace(0,pi,dims(2));    % inclination
+% phi = linspace(0,2*pi,dims(1)); % azimuth
+% [th,phi] = meshgrid(th,phi);
+% 
+% szn = 1;
+% x_cart = linspace(-szn,szn,dims(1));
+% y_cart = linspace(-szn,szn,dims(2));
+% [x_cart,y_cart] = meshgrid(x_cart,y_cart);
+% r = sqrt(x_cart.^2+y_cart.^2);
+% 
+% % Initialize the A matrix
+% A = [];
+% for n = 0:order
+%     for m = -n:n
+%         spherical_function_n_m = build_spherical_function_n_m(n,m,r,th,phi);
+%         A = [ A spherical_function_n_m(:) ];
+%     end
+% end
 end
 
 
